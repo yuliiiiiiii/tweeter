@@ -11,10 +11,8 @@ nav {
   align-items: center;
   justify-content: space-between;
   background-color: #4056a1;
-}
-
-nav .write-new-tweet {
-  display:inline-block;
+  position:fixed;
+  width: 100%;
 }
 
 nav p {
