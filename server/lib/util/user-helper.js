@@ -2,6 +2,7 @@
 
 const Chance      = require("chance"),
       chance      = new Chance();
+// Random generator helper for JavaScript, this single library can generate random numbers, characters, strings, names, addresses, dice, and pretty much anything else.
 
 const md5 = require('md5');
 

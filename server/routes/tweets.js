@@ -1,6 +1,7 @@
 "use strict";
 
 const userHelper    = require("../lib/util/user-helper")
+//generates random user info and userHandle and avatars
 
 const express       = require('express');
 const tweetsRoutes  = express.Router();
@@ -13,6 +14,7 @@ module.exports = function(DataHelpers) {
         res.status(500).json({ error: err.message });
       } else {
         res.json(tweets);
+        //show the newest tweets
       }
     });
   });

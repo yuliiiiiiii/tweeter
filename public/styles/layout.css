@@ -3,6 +3,11 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
+/* font-family: 'Bungee', cursive;
+font-family: 'Source Sans 3', sans-serif;
+ */
+
 html {
   box-sizing: border-box;
 }
@@ -18,8 +23,10 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans 3', sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
