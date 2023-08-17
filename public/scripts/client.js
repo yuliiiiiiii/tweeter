@@ -30,6 +30,16 @@ $(document).ready(() => {
   //     }
   // ]
   
+  const escape = function(str) {
+    //a function to encode string so that HTML characters like <script> will be converted into special characters, so when the input is rendered, the browser doesn't run the input function but just display as special characters
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    //.createTextNode(data) => creates a new text node using parameter data (a string)
+    //.appendChild(element) => adds a node to the end of the list of chidren of a specified parent node
+    return div.innerHTML;
+
+  };
+
   const createTweetElement = function(tweet) {
     let name = tweet.user.name;
     let img = tweet.user.avatars;
@@ -46,7 +56,7 @@ $(document).ready(() => {
       </div>
       <p id="handle">${handle}</p>
     </header>
-    <p class="past-tweet-content">${tweet_content}</p>
+    <p class="past-tweet-content">${escape(tweet_content)}</p>
     <footer>
       <p>${created_at}</p>
 
