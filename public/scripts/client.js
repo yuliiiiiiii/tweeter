@@ -65,8 +65,8 @@ $(document).ready(() => {
     for (let tweet of tweets) {
       //loop in the tweets array
       let tweetContent = createTweetElement(tweet);
-      $('#tweets-container').append(tweetContent);
-      //append $tweet as content to #tweets-container section in index.html
+      $('#tweets-container').prepend(tweetContent);
+      //prepend $tweet as content to the beginnger of #tweets-container section in index.html
     }
   }
 
@@ -75,6 +75,19 @@ $(document).ready(() => {
   $('#send-tweet').on('submit', function(event) {
     event.preventDefault();
     //stop the default form submission behaviour of sending the post request and reloading the page.
+    const tweetText = $("#tweet-text").val();
+    //val() gets the value of form elements
+    // console.log("tweetText:", tweetText);
+    if (tweetText.length === 0) {
+      alert("You can't submit an empty tweet.");
+      return;
+    }
+    
+    if (tweetText.length > 140) {
+      alert("Your tweet is too long!");
+      return;
+    }
+
     const tweetStr = $(this).serialize();
     // .serialize() function turns a set of form data into a query string
     $.ajax('http://localhost:8080/tweets', { 
@@ -82,6 +95,11 @@ $(document).ready(() => {
       data: tweetStr, //data to submit
       success: function () {
         console.log("success:", tweetStr);
+        loadTweets();
+        $('#tweet-text').val('');
+        //empty the textarea after submission
+        $('#counter').val(140);
+        //reset count back to 140
       }
     })
   })
@@ -90,11 +108,10 @@ $(document).ready(() => {
     $.ajax('http://localhost:8080/tweets', { method: 'GET' }) //Use ajax to make a get request
     .then(function(tweetsArray) {
       renderTweets(tweetsArray);
+    //get the array of tweets from get response, and send it to renderTweets, in order to load new tweets on browser
     })
   }
-  loadTweets();
-// load the tweets on page load
-
+  
 
 });
 
