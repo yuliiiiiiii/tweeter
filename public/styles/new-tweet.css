@@ -4,7 +4,7 @@ section .new-tweet {
 
 #tweet-text {
   border:0;
-  border-bottom: 4px solid black;
+  border-bottom: 4px solid rgb(84, 81, 73, 0.8);
   background-color: transparent;
   /* to remove the white background of textarea */
   font-size: 18px;

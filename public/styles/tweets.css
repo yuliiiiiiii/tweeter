@@ -27,7 +27,7 @@ article.tweet header {
   justify-content: space-between;
 }
 
-article.tweet header .UserID{
+article.tweet header #handle {
   color: #4056a1;
   opacity: 0.4;
   font-weight: bold;
