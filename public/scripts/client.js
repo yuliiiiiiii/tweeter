@@ -69,5 +69,25 @@ $(document).ready(() => {
   }
 
   renderTweets(data);
+  
+  $('#send-tweet').on('submit', function(event) {
+    event.preventDefault();
+    //stop the default form submission behaviour of sending the post request and reloading the page.
+    const tweetStr = $(this).serialize();
+    // .serialize() function turns a set of form data into a query string
+    $.ajax('http://localhost:8080/tweets', { methos: 'POST'})
+    .then(function() {
+      console.log('Success:', tweetStr);
+    })
+    //Use ajax to make a post request
+  })
+
+  const loadTweets = function() {
+    $.ajax('http://localhost:8080/tweets', { method: 'GET' })
+    .then(function() {
+      
+    })
+  }
+
 });
 
