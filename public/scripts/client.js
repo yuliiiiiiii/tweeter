@@ -66,7 +66,7 @@ $(document).ready(() => {
       //loop in the tweets array
       let tweetContent = createTweetElement(tweet);
       $('#tweets-container').prepend(tweetContent);
-      //prepend $tweet as content to the beginnger of #tweets-container section in index.html
+      //prepend $tweet as content to the beginning of #tweets-container section in index.html
     }
   }
 
@@ -95,7 +95,7 @@ $(document).ready(() => {
       data: tweetStr, //data to submit
       success: function () {
         console.log("success:", tweetStr);
-        loadTweets();
+        loadTweets(); //get request can only happen after the post request
         $('#tweet-text').val('');
         //empty the textarea after submission
         $('#counter').val(140);
