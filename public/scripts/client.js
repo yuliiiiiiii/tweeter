@@ -83,13 +83,15 @@ $(document).ready(() => {
     }
 
     const tweetStr = $(this).serialize();
-    // .serialize() function turns a set of form data into a query string
+    // .serialize() function turns a set of one form data into a query string
     $.ajax('http://localhost:8080/tweets', {
       type: 'POST', //Use ajax to make a post request
       data: tweetStr, //data to submit
       success: function() {
         console.log("success:", tweetStr);
-        loadTweets(); //get request can only happen after the post request
+        $("article.tweet").replaceWith(loadTweets());
+        //get request can only happen after the post request
+        //replace the existing old tweets with newer verison(same olde tweets with one new tweet)
         $('#tweet-text').val('');
         //empty the textarea after submission
         $('#counter').val(140);
