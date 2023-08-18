@@ -65,7 +65,7 @@ $(document).ready(() => {
 
     const tweetText = $("#tweet-text").val().trim();
     //val() gets the value of form elements
-   //trim() removed space
+    //trim() removed space
 
     if (tweetText.length === 0) {
 
@@ -96,8 +96,6 @@ $(document).ready(() => {
         //empty the textarea after submission
         $('#counter').val(140);
         //reset count back to 140
-        $('#counter').css("color", "rgb(84, 81, 73, 0.8)");
-        //reset count color back to black
       }
     });
   });
