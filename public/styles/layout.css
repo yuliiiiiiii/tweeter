@@ -35,3 +35,47 @@ main {
   margin: 0 auto;
   color: rgb(84, 81, 73, 0.8);
 }
+
+@media screen and (min-width:768px) {
+  nav {
+    background-color: rgb(64, 86, 161, 0.5);
+    height: 100px;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  nav {
+    background-color: rgb(64, 86, 161);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  #body_container {
+    display: flex;
+    margin-top: 150px;
+    align-items: flex-start;
+    padding:40px;
+  }
+
+  section.new-tweet {
+    margin-top: 0;
+  }
+
+  #main-header {
+    margin-top: 30px;
+  }
+
+  main {
+    margin-left: 30px;
+    flex-basis: 60%;
+  }
+
+  header {
+    margin-right: 30px;
+    flex-basis: 40%;
+  }
+
+
+
+}

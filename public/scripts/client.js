@@ -131,7 +131,9 @@ $(document).ready(() => {
         //get the array of tweets from get response, and send it to renderTweets, in order to load new tweets on browser
       });
   };
-
+  
+  loadTweets();
+  //to load the page once open
 
 });
 

@@ -6,11 +6,10 @@ nav .logo{
 
 nav {
   height: 120px;
-  padding:0 1.5em;
+  padding:0 35px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #4056a1;
   position:fixed;
   width: 100%;
 }
