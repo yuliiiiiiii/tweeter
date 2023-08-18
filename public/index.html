@@ -52,51 +52,51 @@
 
   </nav>
 
-<div id="body_container">
+  <div id="body_container">
 
-  <header id="main-header">
-    <div>
-      <img src="images/profile-hex.png">
-    </div>
-    <br>
-    <div class="name">
-      <h2>FirstName <span class="FamilyName">FamilyName</span></h2>
-    </div>
-  </header>
+    <header id="main-header">
+      <div>
+        <img src="images/profile-hex.png">
+      </div>
+      <br>
+      <div class="name">
+        <h2>FirstName <span class="FamilyName">FamilyName</span></h2>
+      </div>
+    </header>
 
-  <!-- Page-specific (main) content here -->
-  <main class="container">
+    <!-- Page-specific (main) content here -->
+    <main class="container">
 
-    <section class="new-tweet">
-      <!-- <h2>Compose Tweet</h2> -->
-      <form method="post" action="/tweets" id="send-tweet">
+      <section class="new-tweet">
+        <!-- <h2>Compose Tweet</h2> -->
+        <form method="post" action="/tweets" id="send-tweet">
 
-        <div id="errorBox">
-          <i class="fa-solid fa-triangle-exclamation"></i>
-          <span id="error">
-            <!-- pass in error message here -->
-          </span>
-          <i class="fa-solid fa-triangle-exclamation"></i>
-        </div>
+          <div id="errorBox">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span id="error">
+              <!-- pass in error message here -->
+            </span>
+            <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
 
-        <label for="tweet-text">What are you humming about?</label>
+          <label for="tweet-text">What are you humming about?</label>
 
-        <textarea name="text" id="tweet-text"></textarea>
+          <textarea name="text" id="tweet-text"></textarea>
 
-        <div class="tweet-button-words-left">
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text" id="counter">140</output>
-        </div>
+          <div class="tweet-button-words-left">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text" id="counter">140</output>
+          </div>
 
-      </form>
-    </section>
+        </form>
+      </section>
 
-    <section id="tweets-container">
-      <!-- pass in new tweets here -->
-    </section>
-  </main>
+      <section id="tweets-container">
+        <!-- pass in new tweets here -->
+      </section>
+    </main>
 
-</div>
+  </div>
 
 </body>
 

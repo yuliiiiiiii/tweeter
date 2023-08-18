@@ -8,9 +8,9 @@
   box-shadow: 7px 7px 0px 0px rgb(64, 86, 161, 0.3);
 }
 
-article.tweet header img{
-  width:60px;
-  height:60px;
+article.tweet header img {
+  width: 60px;
+  height: 60px;
 }
 
 article.tweet .photo-username p {
@@ -19,7 +19,7 @@ article.tweet .photo-username p {
 
 article.tweet .photo-username {
   display: flex;
-  
+
 }
 
 article.tweet header {
@@ -63,8 +63,5 @@ article.tweet footer .fa-solid {
 }
 
 article.tweet footer .fa-solid:hover {
-  color:#d68f00;
+  color: #d68f00;
 }
-
-
-

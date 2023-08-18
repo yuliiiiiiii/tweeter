@@ -3,7 +3,7 @@ section .new-tweet {
 }
 
 #tweet-text {
-  border:0;
+  border: 0;
   border-bottom: 4px solid rgb(84, 81, 73, 0.8);
   background-color: transparent;
   /* to remove the white background of textarea */
@@ -56,9 +56,8 @@ section .new-tweet {
 .new-tweet #errorBox {
   border: 4px solid red;
   padding: 8px 15px;
-  color:red;
+  color: red;
   margin-bottom: 20px;
   font-size: 20px;
   display: none;
 }
-

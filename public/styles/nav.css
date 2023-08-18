@@ -1,16 +1,16 @@
-nav .logo{
+nav .logo {
   font-family: 'Bungee', cursive, sans-serif;
   color: #ffffff;
   font-size: 2.5em;
- }
+}
 
 nav {
   height: 120px;
-  padding:0 35px;
+  padding: 0 35px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position:fixed;
+  position: fixed;
   width: 100%;
 }
 
@@ -20,7 +20,7 @@ nav p {
 }
 
 nav i {
-  color:red;
+  color: red;
 }
 
 nav div {

@@ -5,31 +5,6 @@
  */
 
 $(document).ready(() => {
-  // const data = [
-  //     {
-  //       "user": {
-  //         "name": "Newton",
-  //         "avatars": "https://i.imgur.com/73hZDYK.png",
-  //         "handle": "@SirIsaac"
-  //       },
-  //       "content": {
-  //         "text": "If I have seen further it is by standing on the shoulders of giants"
-  //       },
-  //       "created_at": 1692056240004
-  //     },
-  //     {
-  //       "user": {
-  //         "name": "Descartes",
-  //         "avatars": "https://i.imgur.com/nlhLi3I.png",
-  //         "handle": "@rd"
-  //       },
-  //       "content": {
-  //         "text": "Je pense , donc je suis"
-  //       },
-  //       "created_at": 1692142640004
-  //     }
-  // ]
-
   const escape = function(str) {
     //a function to encode string so that HTML tags like <script> will be converted into special characters, so when the input is rendered, the browser doesn't run the input function but just display as special characters
     let div = document.createElement("div");
@@ -37,7 +12,6 @@ $(document).ready(() => {
     //.createTextNode(data) => creates a new text node using parameter data (a string)
     //.appendChild(element) => adds a node to the end of the list of chidren of a specified parent node
     return div.innerHTML;
-
   };
 
   const createTweetElement = function(tweet) {
@@ -131,7 +105,7 @@ $(document).ready(() => {
         //get the array of tweets from get response, and send it to renderTweets, in order to load new tweets on browser
       });
   };
-  
+
   loadTweets();
   //to load the page once open
 

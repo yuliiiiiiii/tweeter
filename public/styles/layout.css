@@ -11,7 +11,10 @@ font-family: 'Source Sans 3', sans-serif;
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -31,7 +34,7 @@ body {
  */
 
 main {
-  width:90%;
+  width: 90%;
   margin: 0 auto;
   color: rgb(84, 81, 73, 0.8);
 }
@@ -39,7 +42,6 @@ main {
 @media screen and (min-width:768px) {
   nav {
     background-color: rgb(64, 86, 161, 0.5);
-    height: 100px;
   }
 }
 
@@ -51,11 +53,12 @@ main {
     left: 0;
     right: 0;
   }
+
   #body_container {
     display: flex;
     margin-top: 150px;
     align-items: flex-start;
-    padding:40px;
+    padding: 40px;
   }
 
   section.new-tweet {
@@ -75,7 +78,4 @@ main {
     margin-right: 30px;
     flex-basis: 40%;
   }
-
-
-
 }
