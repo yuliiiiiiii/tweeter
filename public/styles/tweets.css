@@ -37,6 +37,8 @@ article.tweet .past-tweet-content {
   margin-top: 40px;
   padding-bottom: 10px;
   font-weight: bold;
+  word-wrap: break-word;
+  /* to stop long words from overflowing out side of the tweet box */
 }
 
 article.tweet footer {
@@ -64,4 +66,5 @@ article.tweet footer .fa-solid {
 
 article.tweet footer .fa-solid:hover {
   color: #d68f00;
+  cursor: pointer;
 }

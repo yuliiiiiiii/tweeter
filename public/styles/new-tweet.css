@@ -49,6 +49,10 @@ section .new-tweet {
   border-radius: 5px;
 }
 
+.tweet-button-words-left button:hover {
+  cursor: pointer;
+}
+
 .new-tweet {
   margin-top: 30px;
 }

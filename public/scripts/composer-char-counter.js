@@ -8,12 +8,15 @@ $(document).ready(function() {
 
     //  console.log(charLeft); 
 
-    $('#counter').val(charLeft);
+    $('#counter').text(charLeft);
     //added counter id in output, change the output value as charLeft
 
     if (charLeft < 0) {
       $('#counter').css("color", "red");
       //set a CSS property in jQuery
+    } else {
+      $('#counter').css("color", "rgb(84, 81, 73, 0.8)");
+      //when words go back to less than 140, change back to black
     }
 
   });
