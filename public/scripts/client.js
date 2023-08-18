@@ -29,9 +29,9 @@ $(document).ready(() => {
   //       "created_at": 1692142640004
   //     }
   // ]
-  
+
   const escape = function(str) {
-    //a function to encode string so that HTML characters like <script> will be converted into special characters, so when the input is rendered, the browser doesn't run the input function but just display as special characters
+    //a function to encode string so that HTML tags like <script> will be converted into special characters, so when the input is rendered, the browser doesn't run the input function but just display as special characters
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     //.createTextNode(data) => creates a new text node using parameter data (a string)
@@ -46,7 +46,7 @@ $(document).ready(() => {
     let handle = tweet.user.handle;
     let tweet_content = tweet.content.text;
     let created_at = timeago.format(tweet.created_at); //use timeago.format(js-time-string) to show how many days ago
-  
+
     let $tweet = `
     <article class="tweet">
     <header>
@@ -67,10 +67,10 @@ $(document).ready(() => {
       </div>
     </footer>
   </article>
-    `
+    `;
     return $tweet;
-  }
-  
+  };
+
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
       //loop in the tweets array
@@ -78,32 +78,42 @@ $(document).ready(() => {
       $('#tweets-container').prepend(tweetContent);
       //prepend $tweet as content to the beginning of #tweets-container section in index.html
     }
-  }
+  };
 
   // renderTweets(data);
-  
+
   $('#send-tweet').on('submit', function(event) {
     event.preventDefault();
     //stop the default form submission behaviour of sending the post request and reloading the page.
+
+    $('#errorBox').hide();
+    //Upon submission and before validation, hide the errorBox
+
     const tweetText = $("#tweet-text").val();
     //val() gets the value of form elements
     // console.log("tweetText:", tweetText);
+
     if (tweetText.length === 0) {
-      alert("You can't submit an empty tweet.");
+
+      $('#error').text("You can't submit an empty tweet.");
+      //insert the error message text into the error element
+      $('#errorBox').slideDown("fast",);
+      //Display the matched elements with a sliding motion. The element in CSS is set to display:none
       return;
     }
-    
+
     if (tweetText.length > 140) {
-      alert("Your tweet is too long!");
+      $('#error').text("Your tweet is too long!");
+      $('#errorBox').slideDown("fast");
       return;
     }
 
     const tweetStr = $(this).serialize();
     // .serialize() function turns a set of form data into a query string
-    $.ajax('http://localhost:8080/tweets', { 
+    $.ajax('http://localhost:8080/tweets', {
       type: 'POST', //Use ajax to make a post request
       data: tweetStr, //data to submit
-      success: function () {
+      success: function() {
         console.log("success:", tweetStr);
         loadTweets(); //get request can only happen after the post request
         $('#tweet-text').val('');
@@ -111,17 +121,17 @@ $(document).ready(() => {
         $('#counter').val(140);
         //reset count back to 140
       }
-    })
-  })
+    });
+  });
 
   const loadTweets = function() {
     $.ajax('http://localhost:8080/tweets', { method: 'GET' }) //Use ajax to make a get request
-    .then(function(tweetsArray) {
-      renderTweets(tweetsArray);
-    //get the array of tweets from get response, and send it to renderTweets, in order to load new tweets on browser
-    })
-  }
-  
+      .then(function(tweetsArray) {
+        renderTweets(tweetsArray);
+        //get the array of tweets from get response, and send it to renderTweets, in order to load new tweets on browser
+      });
+  };
+
 
 });
 

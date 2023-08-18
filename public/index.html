@@ -1,84 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-    <!-- add the Font Awesome library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
+  <!-- add the Font Awesome library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <!-- App CSS, put after normalise.css -->
-    <link rel="stylesheet" href="styles/layout.css" type="text/css">
-    <link rel="stylesheet" href="styles/nav.css" type="text/css">
-    <link rel="stylesheet" href="styles/header.css" type="text/css">
-    <link rel="stylesheet" href="styles/new-tweet.css" type="text/css">
-    <link rel="stylesheet" href="styles/tweets.css" type="text/css">
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+    rel="stylesheet">
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- jqueryAjax library  -->
+  <!-- App CSS, put after normalise.css -->
+  <link rel="stylesheet" href="styles/layout.css" type="text/css">
+  <link rel="stylesheet" href="styles/nav.css" type="text/css">
+  <link rel="stylesheet" href="styles/header.css" type="text/css">
+  <link rel="stylesheet" href="styles/new-tweet.css" type="text/css">
+  <link rel="stylesheet" href="styles/tweets.css" type="text/css">
 
-    <!-- add timeago.js from cdnjs.com -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-   
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- jqueryAjax library  -->
 
-    <!-- App JS -->
-    <script type="text/javascript" src="scripts/client.js"></script>
-    <script type="text/javascript" src="scripts/composer-char-counter.js"></script>
-  </head>
+  <!-- add timeago.js from cdnjs.com -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span class="logo">&#x1D550;</span>
 
-      <div>
+  <!-- App JS -->
+  <script type="text/javascript" src="scripts/client.js"></script>
+  <script type="text/javascript" src="scripts/composer-char-counter.js"></script>
+</head>
+
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav>
+    <span class="logo">&#x1D550;</span>
+
+    <div>
       <p><strong>Write</strong> a new Tweet</p>
       <i class="fa-solid fa-angles-down fa-bounce"></i>
-      </div>
+    </div>
 
-    </nav>
-   
-    <header id="main-header">
-      <div>
-          <img src="images/profile-hex.png"> 
-      </div>
-      <br>
-      <div class="name">
-          <h2>FirstName <span class="FamilyName">FamilyName</span></h2>
-      </div>
-    </header>
+  </nav>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
+  <header id="main-header">
+    <div>
+      <img src="images/profile-hex.png">
+    </div>
+    <br>
+    <div class="name">
+      <h2>FirstName <span class="FamilyName">FamilyName</span></h2>
+    </div>
+  </header>
 
-      <section class="new-tweet">
-        <!-- <h2>Compose Tweet</h2> -->
-        <form method="post" action="/tweets" id="send-tweet">
-          
-          <label for="tweet-text">What are you humming about?</label>
+  <!-- Page-specific (main) content here -->
+  <main class="container">
 
-          <textarea name="text" id="tweet-text"></textarea>
+    <section class="new-tweet">
+      <!-- <h2>Compose Tweet</h2> -->
+      <form method="post" action="/tweets" id="send-tweet">
 
-          <div class="tweet-button-words-left">
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text" id="counter">140</output>
-          </div>
+        <div id="errorBox">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span id="error">
+            <!-- pass in error message here -->
+          </span>
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
 
-        </form>
-      </section>
+        <label for="tweet-text">What are you humming about?</label>
 
-      <section id="tweets-container">
-        
-      </section>
+        <textarea name="text" id="tweet-text"></textarea>
 
-    </main>
-  </body>
+        <div class="tweet-button-words-left">
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text" id="counter">140</output>
+        </div>
+
+      </form>
+
+
+
+    </section>
+
+    <section id="tweets-container">
+      <!-- pass in new tweets here -->
+    </section>
+
+  </main>
+</body>
+
 </html>
