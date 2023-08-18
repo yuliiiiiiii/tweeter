@@ -5,9 +5,9 @@ Y is a simple, single-page Twitter clone.
 This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
 
 ## Final Product
-!["screenshot of mobile screen"]()
-!["screenshot of tablet screen"]()
-!["screenshot of desktop screen"]()
+!["screenshot of mobile screen"](https://github.com/yuliiiiiiii/tweeter/blob/master/docs/mobile-screen.png?raw=true)
+!["screenshot of tablet screen"](https://github.com/yuliiiiiiii/tweeter/blob/master/docs/tablet-screen-with-error.png?raw=true)
+!["screenshot of desktop screen"](https://github.com/yuliiiiiiii/tweeter/blob/master/docs/desktop-screen.png?raw=true)
 
 ## Getting Started
 
