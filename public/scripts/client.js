@@ -63,9 +63,9 @@ $(document).ready(() => {
     $('#errorBox').hide();
     //Upon submission and before validation, hide the errorBox
 
-    const tweetText = $("#tweet-text").val();
+    const tweetText = $("#tweet-text").val().trim();
     //val() gets the value of form elements
-    // console.log("tweetText:", tweetText);
+   //trim() removed space
 
     if (tweetText.length === 0) {
 
@@ -91,11 +91,13 @@ $(document).ready(() => {
         console.log("success:", tweetStr);
         $("article.tweet").replaceWith(loadTweets());
         //get request can only happen after the post request
-        //replace the existing old tweets with newer verison(same olde tweets with one new tweet)
+        //replace the existing old tweets with newer verison(same olde tweets with one prepended new tweet)
         $('#tweet-text').val('');
         //empty the textarea after submission
         $('#counter').val(140);
         //reset count back to 140
+        $('#counter').css("color", "rgb(84, 81, 73, 0.8)");
+        //reset count color back to black
       }
     });
   });
