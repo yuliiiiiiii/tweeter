@@ -37,7 +37,7 @@ article.tweet .past-tweet-content {
   margin-top: 40px;
   padding-bottom: 10px;
   font-weight: bold;
-  word-wrap: break-word;
+  word-wrap: break-word; 
   /* to stop long words from overflowing out side of the tweet box */
 }
 
